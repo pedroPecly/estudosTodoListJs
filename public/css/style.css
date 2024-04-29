@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+header,
+main,
+footer {
+    padding-left: 5px;
+}
+
+header {
+    margin-top: 5px;
+}
+
+main {
+    display: flex;
+}
+
+main div {
+    flex-grow: 1;
+}
+
+footer {
+    background-color: lightgray;
+    position: fixed;
+    line-height: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.hideElement {
+    display: none;
+}
+
+.taskDone {
+    text-decoration: line-through;
+}
