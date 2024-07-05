@@ -1,6 +1,20 @@
 let btnAdd = document.getElementById("btnAdd");
+let inpDesc = document.getElementById("inpDesc");
 
 btnAdd.addEventListener("click", addTask);
+inpDesc.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        addTask();
+    }
+});
+
+function getTarefas(){
+    return JSON.parse(localStorage.getItem("tarefas")) || [];
+}
+
+function salvarLocal(){
+    let tarefas = getTarefas();
+}
 
 function deleteItem(event) {
     event.target.parentNode.remove();
@@ -71,7 +85,7 @@ function itemExists(list, text) {
     return arrayResultado.length > 0;
 }
 
-function addTask() {
+function addTask(event) {
     let inpDesc = document.getElementById("inpDesc");
     let text = inpDesc.value.trim();
 
@@ -89,5 +103,8 @@ function addTask() {
     //adicionando um item da lista
     ulTarefas.appendChild(createListItem(text));
     inputReset(inpDesc);
+    let tarefas = getTarefas();
+    tarefas.push({"desc": text, concluida: false});
+    localStorage.setItem("tarefas", JSON.stringify(tarefas));
     updateStatus(getTodoTasks(), getDoneTasks());
 }
