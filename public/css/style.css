@@ -1,19 +1,16 @@
+
 body {
     margin: 0;
 }
 
-header,
-main,
-footer {
+header {margin-top: 10px;}
+
+header, main, footer {
     padding-left: 5px;
 }
 
-header {
-    margin-top: 5px;
-}
-
 main {
-    display: flex;
+    display: flex;        
 }
 
 main div {
@@ -21,18 +18,18 @@ main div {
 }
 
 footer {
+    line-height: 20px;    
     background-color: lightgray;
     position: fixed;
-    line-height: 20px;
     bottom: 0;
     left: 0;
     right: 0;
 }
 
-.hideElement {
+.hide-element {
     display: none;
 }
 
-.taskDone {
+.task-done {
     text-decoration: line-through;
 }
